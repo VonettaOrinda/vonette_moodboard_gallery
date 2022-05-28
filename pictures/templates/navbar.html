@@ -12,6 +12,31 @@
       <a class="navbar-brand" href="{% url 'welcome' %}">VONETTE'S GALLERY</a>
     </div>
   </div>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item dropdown">
+
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Location
+        </a>
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          category
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          {% for location in location %}
+          <a class="dropdown-item" href="/?location={{location.id}}">{{location.name}}</a>
+          {%endfor%}
+         {%for category in category%} 
+          <a class="dropdown-item" href="/?category={{category.id}}">{{category.name}}</a>
+          {%endfor%}
+        </div>
+    </ul>
+  </div>
 </nav>
 </body>
 </html>
