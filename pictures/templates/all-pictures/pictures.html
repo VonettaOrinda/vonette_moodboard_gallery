@@ -1,5 +1,26 @@
 {%extends 'all-pictures/base.html'%}
-
 {% block content %}
-{{block.super}}
+{{ block.super}}
+{% load bootstrap3 %}
+<br>
+<br>
+<div class="container">
+
+  <div class="card-columns">
+    {% for image in images %}
+    <div class="card border-secondary">   
+      <img class="card-img-top" class="img-responsive" src="{{image.gallery_image.url}}" data-target="#extraModal{{image.id}}" data-toggle="modal" size="100px200">
+    </div>
+    <div class="card-body">
+      <p>About: {{image.description}}</p>
+      <p>Location: {{image.location}}</p>
+      {% endfor %}
+     {% for category in image.categories.all %}
+      <p> Category: {{ category.name }} </p>
+      {% endfor %}
+    </div>
+
+  </div>
+
+</div>
 {% endblock %}
