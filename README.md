@@ -51,7 +51,7 @@ Admin should:
 ## Running the Application
 * Creating the virtual environment
 
-        $ python3.6 -m venv --without-pip virtual
+        $ python3.8 -m venv --without-pip virtual
         $ source virtual/bin/activate
         $ curl https://bootstrap.pypa.io/get-pip.py | python
 
@@ -61,7 +61,7 @@ Admin should:
 
 * To run the application, in your terminal:
 
-        $ python3.6 manage.py runserver
+        $ python3.8 manage.py runserver
 
 ## Testing the Application
 * To run the tests for the class files:
