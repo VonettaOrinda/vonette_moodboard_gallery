@@ -14,12 +14,9 @@
   </div>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ">
-      {% comment %} <li class="nav-item active"> {% endcomment %}
+      
         <a class="nav-link" href="/">Home </a>
-      {% comment %} </li> {% endcomment %}
-
-      {% comment %} <li class="nav-item dropdown"> {% endcomment %}
-
+      
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Location
         </a>
@@ -35,7 +32,7 @@
           <a class="dropdown-item" href="/?category={{category.id}}">{{category.name}}</a>
           {%endfor%}
         </div>
-    {% comment %} </ul> {% endcomment %}
+    
   </div>
   <form class="form-inline my-2 my-lg-0" role="search" action="{% url 'search_results' %}" method="get">
     <input type="text" class="form-control" placeholder="Search Image" name="categories">

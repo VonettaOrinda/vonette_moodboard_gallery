@@ -42,7 +42,7 @@
 
         <!-- The button used to copy the text -->
 
-        <button type="button" name="button" class="btn btn-info" value="{image.gallery_image.url}}" onclick="copylink(this.value)">Copy Image Link</button>
+        <button type="button" name="button" class="btn btn-info" value="https://vonettesgallery.herokuapp.com{{image.gallery_image.url}}" onclick="copylink(this.value)">Copy Image Link</button>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -51,6 +51,7 @@
     </div>
   </div>
 </div>
+
 <script>
 function copylink(value) {
     console.log('hi yellow')
