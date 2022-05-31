@@ -9,16 +9,16 @@
 <nav class="navbar navbar-inverse  navbar-expand-lg">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="{% url 'home' %}">VONETTE'S GALLERY</a>
+      <a class="navbar-brand" href="{% url 'home' %}">VONETTE'S MOODBOARD GALLERY</a>
     </div>
   </div>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-      </li>
+      {% comment %} <li class="nav-item active"> {% endcomment %}
+        <a class="nav-link" href="/">Home </a>
+      {% comment %} </li> {% endcomment %}
 
-      <li class="nav-item dropdown">
+      {% comment %} <li class="nav-item dropdown"> {% endcomment %}
 
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Location
@@ -35,13 +35,13 @@
           <a class="dropdown-item" href="/?category={{category.id}}">{{category.name}}</a>
           {%endfor%}
         </div>
-    </ul>
+    {% comment %} </ul> {% endcomment %}
   </div>
+  <form class="form-inline my-2 my-lg-0" role="search" action="{% url 'search_results' %}" method="get">
+    <input type="text" class="form-control" placeholder="Search Image" name="categories">
+    <button class="btn btn-outline-success  my-2 my-sm-0 " type="submit">Search</button>
+  </form>
 </nav>
-<form class="form-inline my-2 my-lg-0" role="search" action="{% url 'search_results' %}" method="get">
-  <input type="text" class="form-control" placeholder="Search Image" name="categories">
-  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-</form>
 
 </body>
 </html>

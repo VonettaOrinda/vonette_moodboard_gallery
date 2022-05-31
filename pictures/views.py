@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.http  import HttpResponse,Http404,HttpResponseRedirect
-
-from .models import Image, Location, categories
+from.models import*
+# from .models import Image, Location, categories
+from django.core.exceptions import ObjectDoesNotExist
  
 
 
@@ -11,14 +12,6 @@ def home(request):
     location = Location.objects.all()
     category = categories.objects.all()
 
-    # if 'location' in request.GET and request.GET['location']:
-    #     name = request.GET.get('location')
-    #     images = Image.view_location(name)
-
-    # elif 'category' in request.GET and request.GET['category']:
-    #     cat = request.GET.get('categories')
-    #     images = Image.view_category(cat)
-    #     return render(request, 'all-pictures/pictures.html', {"name":name,"images":images,"cat":cat })
 
     return render(request,"all-pictures/pictures.html",{"images":images,"location":location,"category":category})
 
@@ -38,6 +31,6 @@ def search_results(request):
 def get_image_by_id(request,image_id):
     try:
         image = Image.objects.get(id = image_id)
-    except DoesNotExist:
+    except ObjectDoesNotExist:
         raise Http404()
     return render(request,"pictures.html", {"image":image})
